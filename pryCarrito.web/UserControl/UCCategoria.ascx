@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UCCategoria.ascx.cs" Inherits="pryCarrito.web.UserControl.UCCategoria" %>
+<asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
