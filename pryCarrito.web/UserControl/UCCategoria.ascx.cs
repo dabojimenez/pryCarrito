@@ -14,7 +14,10 @@ namespace pryCarrito.web.UserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                UcCargar();
+            }
         }
 
         public DropDownList DropDownList
@@ -48,7 +51,12 @@ namespace pryCarrito.web.UserControl
             var _listaCategoria = _taskCategoria.Result;
             if (_listaCategoria!= null && _listaCategoria.Count>0)
             {
-                var data = _listaCategoria.OrderBy(lista => lista.CAT_NOMBRE);
+                var data = _listaCategoria.OrderBy(lista => lista.CAT_NOMBRE).ToList();
+                data.Insert(0, new TBL_CATEGORIA { CAT_NOMBRE = "Seleccione Categoria", CAT_ID = 0 });
+                DropDownList1.DataSource = data;
+                DropDownList1.DataTextField = "CAT_NOMBRE";
+                DropDownList1.DataValueField = "CAT_ID";
+                DropDownList.DataBind();
             }
         }
 

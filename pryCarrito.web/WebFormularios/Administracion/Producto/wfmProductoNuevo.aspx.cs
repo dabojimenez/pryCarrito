@@ -18,5 +18,28 @@ namespace pryCarrito.web.WebFormularios.Administracion.Producto
         {
 
         }
+
+        private void nuevoProducto()
+        {
+            lblId.Text = "";
+            txtCodigo.Text = "";
+            txtDescripcion.Text = "";
+            txtNombre.Text = "";
+            txtPrecioCompra.Text = "";
+            txtPrecioVenta.Text = "";
+            txtStockMaximo.Text = "";
+            txtStockMinimo.Text = "";
+            UC_CATEGORIA1.DropDownList.SelectedIndex = 0;
+        }
+
+        protected void imgNuevo_Click(object sender, ImageClickEventArgs e)
+        {
+            nuevoProducto();
+        }
+
+        protected void lnkNuevo_Click(object sender, EventArgs e)
+        {
+            nuevoProducto();
+        }
     }
 }

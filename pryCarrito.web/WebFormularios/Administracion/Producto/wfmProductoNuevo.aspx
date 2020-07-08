@@ -1,4 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="wfmProductoNuevo.aspx.cs" Inherits="pryCarrito.web.WebFormularios.Administracion.Producto.wfmProductoNuevo" %>
+<%--                                            IMPORTANTE
+Se debe colocar siempre nuestro <%@ Register %> para hacer uso de nuestro user control, y este es
+individual dependiendo del numero de user control que se tenga y que obviamente use este formulario--%>
+<%@ Register Src="~/UserControl/UCCategoria.ascx" TagName="UC_CATEGORIA" TagPrefix="UC1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <br />
     <table>
@@ -17,12 +21,12 @@
                <table width="75%">
                    <tr>
                        <td>
-                           <asp:ImageButton ID="imgNuevo" runat="server" ImageUrl="~/imagenes/archivo-nuevo.png" Width="30px" Height="30px" />
-                           <asp:LinkButton ID="lnkNuevo" runat="server">Nuevo</asp:LinkButton>
+                           <asp:ImageButton ID="imgNuevo" runat="server" ImageUrl="~/imagenes/archivo-nuevo.png" Width="30px" Height="30px" OnClick="imgNuevo_Click" CausesValidation="false" />
+                           <asp:LinkButton ID="lnkNuevo" runat="server" CausesValidation="false" OnClick="lnkNuevo_Click">Nuevo</asp:LinkButton>
                        </td>
                        <td>
-                           <asp:ImageButton ID="imgGuardar" runat="server" ImageUrl="~/imagenes/disco-flexible.png" Width="30px" Height="30px"  />
-                           <asp:LinkButton ID="lnkGuardar" runat="server">Guardar</asp:LinkButton>
+                           <asp:ImageButton ID="imgGuardar" runat="server" ImageUrl="~/imagenes/disco-flexible.png" Width="30px" Height="30px" CausesValidation="false" />
+                           <asp:LinkButton ID="lnkGuardar" runat="server" CausesValidation="false">Guardar</asp:LinkButton>
                        </td>
                    </tr>
                    <tr>
@@ -37,37 +41,42 @@
         <tr>
             <td>ID</td>
             <td>
-                <asp:Label ID="lblId" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblId" runat="server" Text=""></asp:Label>
             </td>
         </tr>
         <tr>
             <td>Categoria</td>
             <td>
-                <asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>
+                <%--<asp:DropDownList ID="DropDownList1" runat="server"></asp:DropDownList>--%>
+                <UC1:UC_CATEGORIA ID="UC_CATEGORIA1" runat="server"></UC1:UC_CATEGORIA>
             </td>
         </tr>
         <tr>
             <td>Codigo</td>
             <td>
-                <asp:TextBox ID="txtCodifo" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtCodigo" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Codigo Campo Obligatorio" ControlToValidate="txtCodigo" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td>Nombre</td>
             <td>
                 <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Nombre Campo Obligatorio" ControlToValidate="txtNombre" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td>Precio de Compra</td>
             <td>
                 <asp:TextBox ID="txtPrecioCompra" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ErrorMessage="Precio de compra Obligatorio" ControlToValidate="txtPrecioCompra" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td>Precio de Venta</td>
             <td>
                 <asp:TextBox ID="txtPrecioVenta" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ErrorMessage="Precio de Venta Obligatorio" ControlToValidate="txtPrecioVenta" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -80,18 +89,21 @@
             <td>Descripcion</td>
             <td>
                 <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Descripcion Campo Obligatorio" ControlToValidate="txtDescripcion" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td>Stock Minimo</td>
             <td>
                 <asp:TextBox ID="txtStockMinimo" runat="server"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Stock Minimo Campo Obligatorio" ControlToValidate="txtStockMinimo" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td>Stock Maximo</td>
             <td>
                 <asp:TextBox ID="txtStockMaximo" runat="server" OnTextChanged="txtStockMaximo_TextChanged"></asp:TextBox>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Stock Maximo Campo Obligatorio" ControlToValidate="txtStockMaximo" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -102,7 +114,8 @@
         <tr>
             <td>Mensaje</td>
             <td>
-                <asp:Label ID="lblMensaje" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="lblMensaje" runat="server" Text=""></asp:Label>
+                <asp:ValidationSummary ID="ValidationSummary1" runat="server" ForeColor="#CC0000" ShowMessageBox="True" />
             </td>
         </tr>
     </table>
