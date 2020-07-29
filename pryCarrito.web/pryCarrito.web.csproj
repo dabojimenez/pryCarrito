@@ -133,8 +133,17 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="imagenes\actualizarDatos.png" />
     <Content Include="imagenes\archivo-nuevo.png" />
+    <Content Include="imagenes\buscar.png" />
+    <Content Include="imagenes\comprar.png" />
+    <Content Include="imagenes\comprarCarrito.png" />
     <Content Include="imagenes\disco-flexible.png" />
+    <Content Include="imagenes\editar.png" />
+    <Content Include="imagenes\eliminar.png" />
+    <Content Include="imagenes\hacia-atras.png" />
+    <Content Include="imagenes\supermercado.png" />
+    <Content Include="js\previewImagen.js" />
     <Content Include="Modelo\ModelpryCarrito.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelpryCarrito.edmx</DependentUpon>
@@ -146,7 +155,12 @@
       <LastGenOutput>ModelpryCarrito.cs</LastGenOutput>
     </Content>
     <Content Include="UserControl\UCCategoria.ascx" />
+    <Content Include="UserControl\ucGridViewDatos.ascx" />
+    <Content Include="WebFormularios\Administracion\Producto\wfmProductoLista.aspx" />
     <Content Include="WebFormularios\Administracion\Producto\wfmProductoNuevo.aspx" />
+    <Content Include="WebFormularios\Public\wfmCatalago.aspx" />
+    <Content Include="WebFormularios\Public\wfmCatalogoProducto.aspx" />
+    <Content Include="WebFormularios\Public\wfmOrdenCompra.aspx" />
     <EntityDeploy Include="Modelo\ModelpryCarrito.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ModelpryCarrito.Designer.cs</LastGenOutput>
@@ -216,6 +230,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Logica\clsCarrito.cs" />
     <Compile Include="Logica\logicaCategoria.cs" />
     <Compile Include="Logica\logicaProducto.cs" />
     <Compile Include="Modelo\ModelpryCarrito.Context.cs">
@@ -270,6 +285,7 @@
       <DependentUpon>ModelpryCarrito.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Encriptacion.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -291,12 +307,26 @@
     <Compile Include="UserControl\UCCategoria.ascx.designer.cs">
       <DependentUpon>UCCategoria.ascx</DependentUpon>
     </Compile>
+    <Compile Include="UserControl\ucGridViewDatos.ascx.cs">
+      <DependentUpon>ucGridViewDatos.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControl\ucGridViewDatos.ascx.designer.cs">
+      <DependentUpon>ucGridViewDatos.ascx</DependentUpon>
+    </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormularios\Administracion\Producto\wfmProductoLista.aspx.cs">
+      <DependentUpon>wfmProductoLista.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormularios\Administracion\Producto\wfmProductoLista.aspx.designer.cs">
+      <DependentUpon>wfmProductoLista.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebFormularios\Administracion\Producto\wfmProductoNuevo.aspx.cs">
       <DependentUpon>wfmProductoNuevo.aspx</DependentUpon>
@@ -305,10 +335,31 @@
     <Compile Include="WebFormularios\Administracion\Producto\wfmProductoNuevo.aspx.designer.cs">
       <DependentUpon>wfmProductoNuevo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="WebFormularios\Public\wfmCatalago.aspx.cs">
+      <DependentUpon>wfmCatalago.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormularios\Public\wfmCatalago.aspx.designer.cs">
+      <DependentUpon>wfmCatalago.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormularios\Public\wfmCatalogoProducto.aspx.cs">
+      <DependentUpon>wfmCatalogoProducto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormularios\Public\wfmCatalogoProducto.aspx.designer.cs">
+      <DependentUpon>wfmCatalogoProducto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormularios\Public\wfmOrdenCompra.aspx.cs">
+      <DependentUpon>wfmOrdenCompra.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormularios\Public\wfmOrdenCompra.aspx.designer.cs">
+      <DependentUpon>wfmOrdenCompra.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="WebFormularios\Public\" />
+    <Folder Include="imagenes\productos\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

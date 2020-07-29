@@ -10,7 +10,7 @@ namespace pryCarrito.web.Logica
 {
     public class logicaCategoria
     {
-        private static BDCARRITOEntities1 db = new BDCARRITOEntities1();
+        private static BDCARRITOEntities3 db = new BDCARRITOEntities3();
 
         public static async Task<List<TBL_CATEGORIA>> GetAllCategorias()
         {

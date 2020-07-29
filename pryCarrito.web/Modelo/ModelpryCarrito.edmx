@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ModelpryCarrito.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BDCARRITOModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TBL_CATEGORIA">
           <Key>
             <PropertyRef Name="CAT_ID" />
@@ -293,7 +293,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="ModelpryCarritoStoreContainer">
+        <EntityContainer Name="BDCARRITOModelStoreContainer">
           <EntitySet Name="TBL_CATEGORIA" EntityType="Self.TBL_CATEGORIA" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_CLIENTE" EntityType="Self.TBL_CLIENTE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBL_DETALLEIMPRESION" EntityType="Self.TBL_DETALLEIMPRESION" Schema="dbo" store:Type="Tables" />
@@ -351,7 +351,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="ModelpryCarrito" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BDCARRITOModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="TBL_CATEGORIA">
           <Key>
             <PropertyRef Name="CAT_ID" />
@@ -660,7 +660,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BDCARRITOEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BDCARRITOEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TBL_CATEGORIA" EntityType="Self.TBL_CATEGORIA" />
           <EntitySet Name="TBL_CLIENTE" EntityType="Self.TBL_CLIENTE" />
           <EntitySet Name="TBL_DETALLEIMPRESION" EntityType="Self.TBL_DETALLEIMPRESION" />
@@ -719,9 +719,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ModelpryCarritoStoreContainer" CdmEntityContainer="BDCARRITOEntities1">
+        <EntityContainerMapping StorageEntityContainer="BDCARRITOModelStoreContainer" CdmEntityContainer="BDCARRITOEntities3">
           <EntitySetMapping Name="TBL_CATEGORIA">
-            <EntityTypeMapping TypeName="ModelpryCarrito.TBL_CATEGORIA">
+            <EntityTypeMapping TypeName="BDCARRITOModel.TBL_CATEGORIA">
               <MappingFragment StoreEntitySet="TBL_CATEGORIA">
                 <ScalarProperty Name="CAT_ID" ColumnName="CAT_ID" />
                 <ScalarProperty Name="CAT_STATUS" ColumnName="CAT_STATUS" />
@@ -732,7 +732,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_CLIENTE">
-            <EntityTypeMapping TypeName="ModelpryCarrito.TBL_CLIENTE">
+            <EntityTypeMapping TypeName="BDCARRITOModel.TBL_CLIENTE">
               <MappingFragment StoreEntitySet="TBL_CLIENTE">
                 <ScalarProperty Name="CLI_ID" ColumnName="CLI_ID" />
                 <ScalarProperty Name="CLI_IDENTIFICACION" ColumnName="CLI_IDENTIFICACION" />
@@ -750,7 +750,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_DETALLEIMPRESION">
-            <EntityTypeMapping TypeName="ModelpryCarrito.TBL_DETALLEIMPRESION">
+            <EntityTypeMapping TypeName="BDCARRITOModel.TBL_DETALLEIMPRESION">
               <MappingFragment StoreEntitySet="TBL_DETALLEIMPRESION">
                 <ScalarProperty Name="DIM_ID" ColumnName="DIM_ID" />
                 <ScalarProperty Name="DEP_CODIGO" ColumnName="DEP_CODIGO" />
@@ -761,7 +761,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_DETALLEPEDIDO">
-            <EntityTypeMapping TypeName="ModelpryCarrito.TBL_DETALLEPEDIDO">
+            <EntityTypeMapping TypeName="BDCARRITOModel.TBL_DETALLEPEDIDO">
               <MappingFragment StoreEntitySet="TBL_DETALLEPEDIDO">
                 <ScalarProperty Name="DEP_CODIGO" ColumnName="DEP_CODIGO" />
                 <ScalarProperty Name="PRO_ID" ColumnName="PRO_ID" />
@@ -777,7 +777,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_DIRECCION">
-            <EntityTypeMapping TypeName="ModelpryCarrito.TBL_DIRECCION">
+            <EntityTypeMapping TypeName="BDCARRITOModel.TBL_DIRECCION">
               <MappingFragment StoreEntitySet="TBL_DIRECCION">
                 <ScalarProperty Name="DIR_ID" ColumnName="DIR_ID" />
                 <ScalarProperty Name="CLI_ID" ColumnName="CLI_ID" />
@@ -793,7 +793,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_FORMAPAGO">
-            <EntityTypeMapping TypeName="ModelpryCarrito.TBL_FORMAPAGO">
+            <EntityTypeMapping TypeName="BDCARRITOModel.TBL_FORMAPAGO">
               <MappingFragment StoreEntitySet="TBL_FORMAPAGO">
                 <ScalarProperty Name="FPA_ID" ColumnName="FPA_ID" />
                 <ScalarProperty Name="FPA_DESCRIPCION" ColumnName="FPA_DESCRIPCION" />
@@ -804,7 +804,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_IMPUESTOS">
-            <EntityTypeMapping TypeName="ModelpryCarrito.TBL_IMPUESTOS">
+            <EntityTypeMapping TypeName="BDCARRITOModel.TBL_IMPUESTOS">
               <MappingFragment StoreEntitySet="TBL_IMPUESTOS">
                 <ScalarProperty Name="IMP_ID" ColumnName="IMP_ID" />
                 <ScalarProperty Name="IMP_CODIGOSRI" ColumnName="IMP_CODIGOSRI" />
@@ -816,7 +816,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_PAGOS">
-            <EntityTypeMapping TypeName="ModelpryCarrito.TBL_PAGOS">
+            <EntityTypeMapping TypeName="BDCARRITOModel.TBL_PAGOS">
               <MappingFragment StoreEntitySet="TBL_PAGOS">
                 <ScalarProperty Name="PAG_ID" ColumnName="PAG_ID" />
                 <ScalarProperty Name="PED_ID" ColumnName="PED_ID" />
@@ -830,7 +830,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_PEDIDO">
-            <EntityTypeMapping TypeName="ModelpryCarrito.TBL_PEDIDO">
+            <EntityTypeMapping TypeName="BDCARRITOModel.TBL_PEDIDO">
               <MappingFragment StoreEntitySet="TBL_PEDIDO">
                 <ScalarProperty Name="PED_ID" ColumnName="PED_ID" />
                 <ScalarProperty Name="PED_FECHA" ColumnName="PED_FECHA" />
@@ -848,7 +848,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_PRODUCTO">
-            <EntityTypeMapping TypeName="ModelpryCarrito.TBL_PRODUCTO">
+            <EntityTypeMapping TypeName="BDCARRITOModel.TBL_PRODUCTO">
               <MappingFragment StoreEntitySet="TBL_PRODUCTO">
                 <ScalarProperty Name="PRO_ID" ColumnName="PRO_ID" />
                 <ScalarProperty Name="PRO_CODIGO" ColumnName="PRO_CODIGO" />
@@ -866,7 +866,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_ROL">
-            <EntityTypeMapping TypeName="ModelpryCarrito.TBL_ROL">
+            <EntityTypeMapping TypeName="BDCARRITOModel.TBL_ROL">
               <MappingFragment StoreEntitySet="TBL_ROL">
                 <ScalarProperty Name="ROL_ID" ColumnName="ROL_ID" />
                 <ScalarProperty Name="ROL_DESCRIPCION" ColumnName="ROL_DESCRIPCION" />
@@ -876,7 +876,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="TBL_USUARIO">
-            <EntityTypeMapping TypeName="ModelpryCarrito.TBL_USUARIO">
+            <EntityTypeMapping TypeName="BDCARRITOModel.TBL_USUARIO">
               <MappingFragment StoreEntitySet="TBL_USUARIO">
                 <ScalarProperty Name="USU_ID" ColumnName="USU_ID" />
                 <ScalarProperty Name="ROL_ID" ColumnName="ROL_ID" />

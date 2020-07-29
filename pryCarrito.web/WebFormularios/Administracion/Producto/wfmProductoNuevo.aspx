@@ -4,6 +4,8 @@ Se debe colocar siempre nuestro <%@ Register %> para hacer uso de nuestro user c
 individual dependiendo del numero de user control que se tenga y que obviamente use este formulario--%>
 <%@ Register Src="~/UserControl/UCCategoria.ascx" TagName="UC_CATEGORIA" TagPrefix="UC1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../../js/previewImagen.js"></script>
     <br />
     <table>
         <tr>
@@ -21,12 +23,16 @@ individual dependiendo del numero de user control que se tenga y que obviamente 
                <table width="75%">
                    <tr>
                        <td>
+                           <asp:ImageButton ID="imgRegresar" runat="server" ImageUrl="~/imagenes/hacia-atras.png" Width="30px" Height="30px" OnClick="imgRegresar_Click" />
+                           <asp:LinkButton ID="lnkRegresar" runat="server" OnClick="lnkRegresar_Click" >Regresar</asp:LinkButton>
+                       </td>
+                       <td>
                            <asp:ImageButton ID="imgNuevo" runat="server" ImageUrl="~/imagenes/archivo-nuevo.png" Width="30px" Height="30px" OnClick="imgNuevo_Click" CausesValidation="false" />
                            <asp:LinkButton ID="lnkNuevo" runat="server" CausesValidation="false" OnClick="lnkNuevo_Click">Nuevo</asp:LinkButton>
                        </td>
                        <td>
-                           <asp:ImageButton ID="imgGuardar" runat="server" ImageUrl="~/imagenes/disco-flexible.png" Width="30px" Height="30px" CausesValidation="false" />
-                           <asp:LinkButton ID="lnkGuardar" runat="server" CausesValidation="false">Guardar</asp:LinkButton>
+                           <asp:ImageButton ID="imgGuardar" runat="server" ImageUrl="~/imagenes/disco-flexible.png" Width="30px" Height="30px" CausesValidation="false" OnClick="imgGuardar_Click" />
+                           <asp:LinkButton ID="lnkGuardar" runat="server" CausesValidation="false" OnClick="lnkGuardar_Click">Guardar</asp:LinkButton>
                        </td>
                    </tr>
                    <tr>
@@ -82,13 +88,16 @@ individual dependiendo del numero de user control que se tenga y que obviamente 
         <tr>
             <td>Imagen</td>
             <td>
-                <asp:FileUpload ID="FileUpload1" runat="server" />
+                <%--https://forums.asp.net/t/2056960.aspx?how+to+show+image+before+upload+using+asp+net+c+--%>
+                <asp:FileUpload ID="fuimage" runat="server" onchange="showpreview(this);" />
+                <asp:Image ID="imgpreview2" runat="server" height="200" width="200" src="" style="width:180px; visibility: hidden;"/>
+                <img id="imgpreview" height="200" width="200" src="" style="width:180px; visibility: hidden;" />
             </td>
         </tr>
         <tr>
             <td>Descripcion</td>
             <td>
-                <asp:TextBox ID="txtDescripcion" runat="server"></asp:TextBox>
+                <asp:TextBox ID="txtDescripcion" runat="server" ></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Descripcion Campo Obligatorio" ControlToValidate="txtDescripcion" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
@@ -102,7 +111,7 @@ individual dependiendo del numero de user control que se tenga y que obviamente 
         <tr>
             <td>Stock Maximo</td>
             <td>
-                <asp:TextBox ID="txtStockMaximo" runat="server" OnTextChanged="txtStockMaximo_TextChanged"></asp:TextBox>
+                <asp:TextBox ID="txtStockMaximo" runat="server"></asp:TextBox>
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ErrorMessage="Stock Maximo Campo Obligatorio" ControlToValidate="txtStockMaximo" Text="*" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>

@@ -4,29 +4,29 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="43d91c2636484310b2622e319df6ed8c" Name="Diagram1">
-        <EntityTypeShape EntityType="ModelpryCarrito.TBL_CATEGORIA" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModelpryCarrito.TBL_CLIENTE" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModelpryCarrito.TBL_DETALLEIMPRESION" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModelpryCarrito.TBL_DETALLEPEDIDO" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModelpryCarrito.TBL_DIRECCION" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModelpryCarrito.TBL_FORMAPAGO" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModelpryCarrito.TBL_IMPUESTOS" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModelpryCarrito.TBL_PAGOS" Width="1.5" PointX="8.25" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModelpryCarrito.TBL_PEDIDO" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModelpryCarrito.TBL_PRODUCTO" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModelpryCarrito.TBL_ROL" Width="1.5" PointX="10.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="ModelpryCarrito.TBL_USUARIO" Width="1.5" PointX="13" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="ModelpryCarrito.FK_TBL_PROD_RELATIONS_TBL_CATE" ManuallyRouted="false" />
-        <AssociationConnector Association="ModelpryCarrito.FK_TBL_DIRE_RELATIONS_TBL_CLIE" ManuallyRouted="false" />
-        <AssociationConnector Association="ModelpryCarrito.FK_TBL_PEDI_RELATIONS_TBL_CLIE" ManuallyRouted="false" />
-        <AssociationConnector Association="ModelpryCarrito.FK_TBL_DETA_RELATIONS_TBL_DETA" ManuallyRouted="false" />
-        <AssociationConnector Association="ModelpryCarrito.FK_TBL_DETA_RELATIONS_TBL_IMPU" ManuallyRouted="false" />
-        <AssociationConnector Association="ModelpryCarrito.FK_TBL_DETA_RELATIONS_TBL_PEDI" ManuallyRouted="false" />
-        <AssociationConnector Association="ModelpryCarrito.FK_TBL_DETA_RELATIONS_TBL_PROD" ManuallyRouted="false" />
-        <AssociationConnector Association="ModelpryCarrito.FK_TBL_PAGO_RELATIONS_TBL_FORM" ManuallyRouted="false" />
-        <AssociationConnector Association="ModelpryCarrito.FK_TBL_PAGO_RELATIONS_TBL_PEDI" ManuallyRouted="false" />
-        <AssociationConnector Association="ModelpryCarrito.FK_TBL_USUA_RELATIONS_TBL_ROL" ManuallyRouted="false" />
+      <Diagram DiagramId="912c138e5e454370b7457892f8c9ad84" Name="Diagram1">
+        <EntityTypeShape EntityType="BDCARRITOModel.TBL_CATEGORIA" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDCARRITOModel.TBL_CLIENTE" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDCARRITOModel.TBL_DETALLEIMPRESION" Width="1.5" PointX="10.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDCARRITOModel.TBL_DETALLEPEDIDO" Width="1.5" PointX="5.25" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDCARRITOModel.TBL_DIRECCION" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDCARRITOModel.TBL_FORMAPAGO" Width="1.5" PointX="6" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDCARRITOModel.TBL_IMPUESTOS" Width="1.5" PointX="8.25" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDCARRITOModel.TBL_PAGOS" Width="1.5" PointX="8.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDCARRITOModel.TBL_PEDIDO" Width="1.5" PointX="3" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDCARRITOModel.TBL_PRODUCTO" Width="1.5" PointX="3" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDCARRITOModel.TBL_ROL" Width="1.5" PointX="10.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BDCARRITOModel.TBL_USUARIO" Width="1.5" PointX="13" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="BDCARRITOModel.FK_TBL_PROD_RELATIONS_TBL_CATE" ManuallyRouted="false" />
+        <AssociationConnector Association="BDCARRITOModel.FK_TBL_DIRE_RELATIONS_TBL_CLIE" ManuallyRouted="false" />
+        <AssociationConnector Association="BDCARRITOModel.FK_TBL_PEDI_RELATIONS_TBL_CLIE" ManuallyRouted="false" />
+        <AssociationConnector Association="BDCARRITOModel.FK_TBL_DETA_RELATIONS_TBL_DETA" ManuallyRouted="false" />
+        <AssociationConnector Association="BDCARRITOModel.FK_TBL_DETA_RELATIONS_TBL_IMPU" ManuallyRouted="false" />
+        <AssociationConnector Association="BDCARRITOModel.FK_TBL_DETA_RELATIONS_TBL_PEDI" ManuallyRouted="false" />
+        <AssociationConnector Association="BDCARRITOModel.FK_TBL_DETA_RELATIONS_TBL_PROD" ManuallyRouted="false" />
+        <AssociationConnector Association="BDCARRITOModel.FK_TBL_PAGO_RELATIONS_TBL_FORM" ManuallyRouted="false" />
+        <AssociationConnector Association="BDCARRITOModel.FK_TBL_PAGO_RELATIONS_TBL_PEDI" ManuallyRouted="false" />
+        <AssociationConnector Association="BDCARRITOModel.FK_TBL_USUA_RELATIONS_TBL_ROL" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

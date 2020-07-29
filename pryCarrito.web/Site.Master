@@ -52,8 +52,17 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Inicio</a></li>
-                        <li><a runat="server" href="~/About">Acerca de</a></li>
+                        <li><a runat="server" href="~/WebFormularios/Administracion/Producto/wfmProductoLista.aspx">Productos</a></li>
+                        <li><a runat="server" href="~/WebFormularios/Public/wfmCatalago.aspx">Catalogo</a></li>
                         <li><a runat="server" href="~/Contact">Contacto</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <asp:ImageButton ID="imbCompras" runat="server" Width="36px" Height="36px" ImageUrl="~/imagenes/supermercado.png" OnClick="imbCompras_Click"/>
+                        </li>
+                        <li>
+                            <asp:Label ID="lblContador" runat="server" Width="10px" Height="10px" ForeColor="White" Text="">0</asp:Label>
+                        </li>
                     </ul>
                 </div>
             </div>

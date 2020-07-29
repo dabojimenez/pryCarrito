@@ -15,6 +15,24 @@ namespace pryCarrito.web.WebFormularios.Administracion.Producto
     {
 
         /// <summary>
+        /// Control imgRegresar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton imgRegresar;
+
+        /// <summary>
+        /// Control lnkRegresar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnkRegresar;
+
+        /// <summary>
         /// Control imgNuevo.
         /// </summary>
         /// <remarks>
@@ -141,13 +159,22 @@ namespace pryCarrito.web.WebFormularios.Administracion.Producto
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator4;
 
         /// <summary>
-        /// Control FileUpload1.
+        /// Control fuimage.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload FileUpload1;
+        protected global::System.Web.UI.WebControls.FileUpload fuimage;
+
+        /// <summary>
+        /// Control imgpreview2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgpreview2;
 
         /// <summary>
         /// Control txtDescripcion.

@@ -13,10 +13,10 @@ namespace pryCarrito.web.Modelo
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BDCARRITOEntities1 : DbContext
+    public partial class BDCARRITOEntities3 : DbContext
     {
-        public BDCARRITOEntities1()
-            : base("name=BDCARRITOEntities1")
+        public BDCARRITOEntities3()
+            : base("name=BDCARRITOEntities3")
         {
         }
     

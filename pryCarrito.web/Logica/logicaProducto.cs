@@ -10,13 +10,63 @@ namespace pryCarrito.web.Logica
 {
     public class logicaProducto
     {
-        private static BDCARRITOEntities1 db = new BDCARRITOEntities1();
+        private static BDCARRITOEntities3 db = new BDCARRITOEntities3();
 
         public static async Task<List<TBL_PRODUCTO>> getAllProduct()
         {
             try
             {
                 return await db.TBL_PRODUCTO.Where(data => data.PRO_STATUS == "A").ToListAsync();
+            }
+            catch (Exception ex)
+            {
+
+                throw new ArgumentException("Error al Obtener Productos");
+            }
+        }
+
+        public static int GetNetxSecuencia()
+        {
+            var query = db.Database.SqlQuery<int>("SELECT NEXT VALUE FOR [dbo].[sq_ProductoID]");
+            var task = query.SingleAsync();
+            int nextValor = task.Result;
+            return nextValor;
+        }
+
+        public static async Task<List<TBL_PRODUCTO>> getProductxCodigo(string codigoProducto)
+        {
+            try
+            {
+                return await db.TBL_PRODUCTO.Where(data => data.PRO_STATUS == "A"
+                                                    && data.PRO_CODIGO.StartsWith(codigoProducto)).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+
+                throw new ArgumentException("Error al Obtener Productos");
+            }
+        }
+
+        public static async Task<List<TBL_PRODUCTO>> getProductxNombre(string nombreProducto)
+        {
+            try
+            {
+                return await db.TBL_PRODUCTO.Where(data => data.PRO_STATUS == "A"
+                                                    && data.PRO_NOMBRE.StartsWith(nombreProducto)).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+
+                throw new ArgumentException("Error al Obtener Productos");
+            }
+        }
+
+        public static async Task<List<TBL_PRODUCTO>> getProductxCategoria(string categoriaProducto)
+        {
+            try
+            {
+                return await db.TBL_PRODUCTO.Where(data => data.PRO_STATUS == "A"
+                                                    && data.TBL_CATEGORIA.CAT_NOMBRE.StartsWith(categoriaProducto)).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -58,6 +108,7 @@ namespace pryCarrito.web.Logica
             try
             {
                 bool resultado = false;
+                _infoProducto.PRO_ID = GetNetxSecuencia();
                 _infoProducto.PRO_STATUS = "A";
                 _infoProducto.PRO_FECHACREACION = DateTime.Now;
                 //insertando al contexto
@@ -107,9 +158,6 @@ namespace pryCarrito.web.Logica
                 throw new ArgumentException("Error al Eliminar el Producto");
             }
         }
-
-
-
 
     }
 }
